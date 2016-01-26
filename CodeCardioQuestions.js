@@ -232,6 +232,24 @@ function findLongestWord(str) {
 }
 
 
+18. //Return the provided string with the first letter of each word capitalized. Make sure the rest of the word is in lower case.
+
+function titleCase(str) {
+  
+  var test = str.split(' ');
+  
+  var newArr = [];
+  
+  test.forEach(function(word) {
+      lower = word.toLowerCase();
+      newArr.push(lower.charAt(0).toUpperCase() + lower.substr(1, word.length -1));
+  });
+  return newArr.join(' ');
+  
+}
+
+titleCase("I'm a little tea pot");
+
 
 
 
