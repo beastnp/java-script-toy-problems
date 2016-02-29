@@ -81,16 +81,14 @@ var findInArray = function(arr, val) {
 
 8.  //Write a function called 'maker' that creates an array and fills that array with numbers 1 to 25, then returns the array.
 
-var maker = function() {
+function maker () {
     var arr = [];
-    for (var i = 1; i < 26; i++) {
-        arr[i] = i;
+    for (var i = 0; i < 25; i++) {
+        arr[i] = (i + 1);
         arr.push(arr[i]);
     } 
     return arr;
-};
-
-Seems to work, but got incorrect on CC
+}
 
 9.  //Create a function called exponent that takes in two parameters, the first parameter should represent a number to be multiplied against itself and the second parameter should represent how many times it is multiplied by itself. The function should return the result of this operation. exponent(2,3) should return 8.
 
@@ -208,6 +206,35 @@ function factorial(num) {
 
 function palindrome(str) {
   
+  reverse = str.split('').reverse();
+  for (var i = reverse.length - 1; i >= 0; i--) {
+      if (reverse[i] === " ") {
+          reverse.splice(i, 1);
+      }
+  }
+  reverse = reverse.join('').toLowerCase();
+  
+  
+  str = str.split('');
+  for (var j = str.length - 1; j >= 0; j--) {
+      if (str[j] === " ") {
+          str.splice(j, 1);
+      }
+  }
+  str = str.join('').toLowerCase();
+  
+ if (str === reverse) {
+     return true;
+ } else {
+     return false;
+ }
+ 
+}
+
+// or
+
+function palindrome(str) {
+  
   var reverse = str.split('').reverse().join('').toLowerCase().replace(/[^A-Z0-9]/ig, '');
   str = str.toLowerCase().replace(/[^A-Z0-9]/ig, '');
   
@@ -227,6 +254,20 @@ function findLongestWord(str) {
   
   str.split(' ').forEach(function (word) {
     longest = (word.length >= longest) ? word.length : longest;
+  });
+  return longest;
+}
+
+// or
+
+function findLongestWord(str) {
+  
+  var longest = 0;
+  
+  str.split(' ').forEach(function (word) {
+    if (word.length >= longest) {
+        longest = word.length;
+    }
   });
   return longest;
 }
@@ -289,4 +330,16 @@ function repeat(str, num) {
   return word.join('');
 }
 
+21>  //We want to count from 1 to 20. But if the number is divisible by 3, we're going to print "Fizz". And if the number is divisible by 5 we're going to print "Buzz".  What will we print if the number is divisible by 3 AND 5? That's right! "FizzBuzz"!
 
+    for (var i = 1; i < 21; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+        console.log("FizzBuzz");
+    } else if (i % 3 === 0) {
+        console.log("Fizz");
+    } else if (i % 5 === 0) {
+        console.log("Buzz");
+    } else {
+        console.log(i);
+    }
+}
