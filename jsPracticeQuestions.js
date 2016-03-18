@@ -1,4 +1,4 @@
-CodeCardio Questions & Answers:
+JS Practice Questions & Answers:
 
 1.	//Create a function called 'reversedLooper' that when passed an array will loop through it backwards and subtract 2 from the last element, 1 from the second to last, 0 from to the third to last, add one to the fourth to last, add 2 to the fifth to last, etc. until it reaches the front of the array.  Return the list when you are done
 
@@ -330,7 +330,7 @@ function repeat(str, num) {
   return word.join('');
 }
 
-21>  //We want to count from 1 to 20. But if the number is divisible by 3, we're going to print "Fizz". And if the number is divisible by 5 we're going to print "Buzz".  What will we print if the number is divisible by 3 AND 5? That's right! "FizzBuzz"!
+21.  //We want to count from 1 to 20. But if the number is divisible by 3, we're going to print "Fizz". And if the number is divisible by 5 we're going to print "Buzz".  What will we print if the number is divisible by 3 AND 5? That's right! "FizzBuzz"!
 
     for (var i = 1; i < 21; i++) {
     if (i % 3 === 0 && i % 5 === 0) {
@@ -341,5 +341,24 @@ function repeat(str, num) {
         console.log("Buzz");
     } else {
         console.log(i);
+    }
+}
+
+22.  //Truncate a string (first argument) if it is longer than the given maximum string length (second argument). Return the truncated string with a "..." ending. Note that the three dots at the end add to the string length. If the num is less than or equal to 3, then the length of the three dots is not added to the string length.
+
+function truncate(str, num) {
+    
+    if(str.length > num) {
+        
+        if(str.length < 3 || num < 3) {
+            newStr = str.split('').slice(0, num).join('');
+            return newStr + "...";
+        } else {
+        newStr = str.split('').slice(0, num - 3).join('');
+        return newStr + "...";
+        }
+        
+    } else {
+        return str;
     }
 }
