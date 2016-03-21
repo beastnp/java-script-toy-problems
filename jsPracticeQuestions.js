@@ -362,3 +362,18 @@ function truncate(str, num) {
         return str;
     }
 }
+
+23.  //Write a function that splits an array (first argument) into groups the length of size (second argument) and returns them as a two-dimensional array. ==> chunk([0, 1, 2, 3, 4, 5, 6], 3) should return [[0, 1, 2], [3, 4, 5], [6]].
+
+function chunk(arr, size) {
+    
+    var num = arr.length/size;
+    
+    var newArr = [];
+    
+    for (var i = 0; i < num; i++) {
+        newArr[i] = arr.splice(0, size);
+    }
+  
+    return newArr;
+}
