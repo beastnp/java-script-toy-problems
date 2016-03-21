@@ -385,3 +385,20 @@ function slasher(arr, howMany) {
     return arr.slice(howMany, arr.length);
     
 }
+
+25.  //Return true if the string in the first element of the array contains all of the letters of the string in the second element of the array. For example, ["hello", "Hello"], should return true because all of the letters in the second string are present in the first, ignoring case. Lastly, ["Alien", "line"], should return true because all of the letters in "line" are present in "Alien".
+
+function mutation(arr) {
+    var answer = true;
+    
+    var zero = arr[0].toLowerCase();
+    var one = arr[1].toLowerCase();
+    var newArr = [zero, one];
+    
+    for (var i = 0; i < one.length; i++) {
+        if(newArr[0].indexOf(one[i]) === -1) {
+            answer = false;
+        }
+    }
+    return answer;
+}
