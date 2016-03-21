@@ -377,3 +377,11 @@ function chunk(arr, size) {
   
     return newArr;
 }
+
+24.  //Return the remaining elements of an array after chopping off n elements from the head. The head means the beginning of the array, or the zeroth index. ==> slasher([1, 2, "chicken", 3, "potatoes", "cheese", 4], 5) should return ["cheese", 4].
+
+function slasher(arr, howMany) {
+    
+    return arr.slice(howMany, arr.length);
+    
+}
